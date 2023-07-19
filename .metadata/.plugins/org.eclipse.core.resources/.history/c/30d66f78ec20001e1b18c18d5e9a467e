@@ -1,0 +1,5 @@
+package com.juanjapon.form.app.validations;
+
+public class UsuarioValidator {
+
+}

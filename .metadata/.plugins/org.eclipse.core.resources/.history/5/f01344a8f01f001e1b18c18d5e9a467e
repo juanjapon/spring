@@ -1,0 +1,3 @@
+NotEmpty=El campo es requerido
+NotEmpty.user.nombre=El campo nombre no puede ser vacío
+NotEmpty.user.username=El campo username es obligatorio

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Enviar parametros de la vista</title>
+	</head>
+	<body>
+		<h1>Enviar parametros de la vista</h1>
+		<ul>
+			<li>
+				<a th:href="@{/params/string(texto='Hola juan')}">/params/string?texto=hola juan</a>
+			</li>
+			<li>
+				<a th:href="@{/params/string(texto='Que tal peter')}">/params/string?texto=Que tal peter</a>
+			</li>
+			<li>
+				<a th:href="@{/params/mix-params(saludo='Como estas juan?',numero=39)}">/params/mix-params?saludo=Como estas juan?&numero=39</a>
+			</li>
+			<li>
+				<a th:href="@{/params/mix-params-request(saludo='Como estas juan?',numero=39)}">/params/mix-params-request?saludo=Como estas juan?&numero=39</a>
+			</li>
+		</ul>
+		
+	</body>
+	
+	
+
+</html>

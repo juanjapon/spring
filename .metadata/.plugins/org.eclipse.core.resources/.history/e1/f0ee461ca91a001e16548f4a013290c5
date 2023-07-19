@@ -1,0 +1,5 @@
+package com.juanjapon.form.app.domain;
+
+public class Usuario {
+
+}

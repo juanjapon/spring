@@ -1,0 +1,28 @@
+package com.juanjapon.form.app.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.juanjapon.form.app.domain.Usuario;
+
+@Controller
+public class FormController {
+
+	@GetMapping("/form")
+	public String form(Model model) {
+		model.addAttribute("titulo", "Formulario");
+		return "form";
+	}
+	
+	@PostMapping("/form")
+	public String procesarFormulario(Usuario usuario,Model model) {
+
+		
+		model.addAttribute("titulo", "Resultado Form");
+		model.addAttribute("usuario",usuario);
+		
+		return "resultado";
+	}
+}
