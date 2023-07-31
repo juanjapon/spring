@@ -1,0 +1,30 @@
+package com.juanjapon.form.app.validations;
+
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+import com.juanjapon.form.app.domain.Usuario;
+
+@Component
+public class UsuarioValidator implements Validator {
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return Usuario.class.isAssignableFrom(clazz);
+	}
+
+	@Override
+	public void validate(Object target, Errors errors) {
+		Usuario usuario=(Usuario)target;
+		
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nombre", "NotEmpty.user.nombre");
+		
+		if(!usuario.getIdentificador().matches("[0-9]{2}[.][\\d]{3}[.][\\d]{3}[-][A-Z]{1}")) {
+			errors.rejectValue("identificador", "pattern.user.identificador");
+		}
+		
+	}
+
+}
